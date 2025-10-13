@@ -10,7 +10,7 @@ body {
     font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
-    color: #ffffff;
+    color: #000000;
     direction: ltr; /* Default direction */
     overflow-x: hidden;
 }
@@ -405,3 +405,4 @@ h3 {
     .analytics-summary { grid-template-columns: 1fr; }
 
 }
+
