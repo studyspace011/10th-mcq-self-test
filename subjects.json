@@ -29,6 +29,17 @@
         {"नाम": "Ch-24 : रचनात्मक लेखन (Creative Writing)", "chapter_name": "रचनात्मक लेखन (Creative Writing)", "csv_path": "subjects/Non-Hindi/Ch-24_Writing.csv"}
       ]
     },
+    {
+      "नाम": "Hindi-Grammar",
+      "अध्याय": [
+        {"नाम": "Ch-1 : संज्ञा, सर्वनाम, विशेषण", "chapter_name": "संज्ञा, सर्वनाम, विशेषण", "csv_path": "subjects/Hindi-Grammar/Ch-1.csv"},
+        {"नाम": "Ch-2 : लिंग, वचन, कारक", "chapter_name": "लिंग, वचन, कारक", "csv_path": "subjects/Hindi-Grammar/Ch-2.csv"},
+        {"नाम": "Ch-3 : संधि और समास", "chapter_name": "संधि और समास", "csv_path": "subjects/Hindi-Grammar/Ch-3.csv"},
+        {"नाम": "Ch-4 : उपसर्ग और प्रत्यय", "chapter_name": "उपसर्ग और प्रत्यय", "csv_path": "subjects/Hindi-Grammar/Ch-4.csv"},
+        {"नाम": "Ch-5 : पर्यायवाची शब्द और विलोम शब्द", "chapter_name": "पर्यायवाची शब्द और विलोम शब्द", "csv_path": "subjects/Hindi-Grammar/Ch-5.csv"},
+        {"नाम": "Ch-6 : मुहावरे और लोकोक्तियाँ", "chapter_name": "मुहावरे और लोकोक्तियाँ", "csv_path": "subjects/Hindi-Grammar/Ch-6.csv"}
+      ]
+    },
         {
       "नाम": "Social Science - History",
       "अध्याय": [
@@ -152,4 +163,5 @@
       ]
     }
   ]
+
 }
