@@ -1,0 +1,155 @@
+{
+  "विषय": [
+    {
+      "नाम": "Non-Hindi",
+      "अध्याय": [
+        {"नाम": "Ch-1 : तू जिंदा है तो...", "chapter_name": "तू जिंदा है तो...", "csv_path": "subjects/Non-Hindi/Ch-1.csv"},
+        {"नाम": "Ch-2 : ईदगाह", "chapter_name": "ईदगाह", "csv_path": "subjects/Non-Hindi/Ch-2.csv"},
+        {"नाम": "Ch-3 : कर्मवीर", "chapter_name": "कर्मवीर", "csv_path": "subjects/Non-Hindi/Ch-3.csv"},
+        {"नाम": "Ch-4 : बालगोबिन भगत", "chapter_name": "बालगोबिन भगत", "csv_path": "subjects/Non-Hindi/Ch-4.csv"},
+        {"नाम": "Ch-5 : हुंडरू का जलप्रपात", "chapter_name": "हुंडरू का जलप्रपात", "csv_path": "subjects/Non-Hindi/Ch-5.csv"},
+        {"नाम": "Ch-6 : बिहारी के दोहे", "chapter_name": "बिहारी के दोहे", "csv_path": "subjects/Non-Hindi/Ch-6.csv"},
+        {"नाम": "Ch-7 : ठेस", "chapter_name": "ठेस", "csv_path": "subjects/Non-Hindi/Ch-7.csv"},
+        {"नाम": "Ch-8 : बच्चे की दुआ", "chapter_name": "बच्चे की दुआ", "csv_path": "subjects/Non-Hindi/Ch-8.csv"},
+        {"नाम": "Ch-9 : अशोक का शस्त्र त्याग", "chapter_name": "अशोक का शस्त्र त्याग", "csv_path": "subjects/Non-Hindi/Ch-9.csv"},
+        {"नाम": "Ch-10 : ईर्ष्या, तू न गई मेरे मन से", "chapter_name": "ईर्ष्या, तू न गई मेरे मन से", "csv_path": "subjects/Non-Hindi/Ch-10.csv"},
+        {"नाम": "Ch-11 : कबीर के पद", "chapter_name": "कबीर के पद", "csv_path": "subjects/Non-Hindi/Ch-11.csv"},
+        {"नाम": "Ch-12 : विक्रमशिला", "chapter_name": "विक्रमशिला", "csv_path": "subjects/Non-Hindi/Ch-12.csv"},
+        {"नाम": "Ch-13 : दीदी की डायरी", "chapter_name": "दीदी की डायरी", "csv_path": "subjects/Non-Hindi/Ch-13.csv"},
+        {"नाम": "Ch-14 : पीपल", "chapter_name": "पीपल", "csv_path": "subjects/Non-Hindi/Ch-14.csv"},
+        {"नाम": "Ch-15 : दिनबंधु 'निराला'", "chapter_name": "दिनबंधु 'निराला'", "csv_path": "subjects/Non-Hindi/Ch-15.csv"},
+        {"नाम": "Ch-16 : खुशबू रचते हैं हाथ", "chapter_name": "खुशबू रचते हैं हाथ", "csv_path": "subjects/Non-Hindi/Ch-16.csv"},
+        {"नाम": "Ch-17 : मंगळ", "chapter_name": "मंगळ", "csv_path": "subjects/Non-Hindi/Ch-17.csv"},
+        {"नाम": "Ch-18 : जननायक कर्पूरी ठाकुर", "chapter_name": "जननायक कर्पूरी ठाकुर", "csv_path": "subjects/Non-Hindi/Ch-18.csv"},
+        {"नाम": "Ch-19 : झांसी की रानी", "chapter_name": "झांसी की रानी", "csv_path": "subjects/Non-Hindi/Ch-19.csv"},
+        {"नाम": "Ch-20 : चिकित्सा का चक्कर", "chapter_name": "चिकित्सा का चक्कर", "csv_path": "subjects/Non-Hindi/Ch-20.csv"},
+        {"नाम": "Ch-21 : सुदामा चरित", "chapter_name": "सुदामा चरित", "csv_path": "subjects/Non-Hindi/Ch-21.csv"},
+        {"नाम": "Ch-22 : राह भटके हिरण के बच्चे", "chapter_name": "राह भटके हिरण के बच्चे", "csv_path": "subjects/Non-Hindi/Ch-22.csv"},
+        {"नाम": "Ch-23 : व्याकरण (Grammar)", "chapter_name": "व्याकरण (Grammar)", "csv_path": "subjects/Non-Hindi/Ch-23_Grammar.csv"},
+        {"नाम": "Ch-24 : रचनात्मक लेखन (Creative Writing)", "chapter_name": "रचनात्मक लेखन (Creative Writing)", "csv_path": "subjects/Non-Hindi/Ch-24_Writing.csv"}
+      ]
+    },
+        {
+      "नाम": "Social Science - History",
+      "अध्याय": [
+        {"नाम": "Ch-1 : यूरोप में राष्ट्रवाद का उदय (The Rise of Nationalism in Europe)", "chapter_name": "यूरोप में राष्ट्रवाद का उदय", "csv_path": "subjects/Social_Science/History/Ch-1.csv"},
+        {"नाम": "Ch-2 : इंडो-चाइना में राष्ट्रवादी आंदोलन (The Nationalist Movement in Indo-China)", "chapter_name": "इंडो-चाइना में राष्ट्रवादी आंदोलन", "csv_path": "subjects/Social_Science/History/Ch-2.csv"},
+        {"नाम": "Ch-3 : भारत में राष्ट्रवाद (Nationalism in India)", "chapter_name": "भारत में राष्ट्रवाद", "csv_path": "subjects/Social_Science/History/Ch-3.csv"},
+        {"नाम": "Ch-4 : भूमंडलीकृत विश्व का बनना (The Making of a Global World)", "chapter_name": "भूमंडलीकृत विश्व का बनना", "csv_path": "subjects/Social_Science/History/Ch-4.csv"},
+        {"नाम": "Ch-5 : औद्योगिकीकरण का युग (The Age of Industrialisation)", "chapter_name": "औद्योगिकीकरण का युग", "csv_path": "subjects/Social_Science/History/Ch-5.csv"},
+        {"नाम": "Ch-6 : काम, आराम और जीवन (Work, Life, and Leisure - शहरों में जीवन)", "chapter_name": "काम, आराम और जीवन", "csv_path": "subjects/Social_Science/History/Ch-6.csv"},
+        {"नाम": "Ch-7 : मुद्रण संस्कृति और आधुनिक दुनिया (Print Culture and the Modern World)", "chapter_name": "मुद्रण संस्कृति और आधुनिक दुनिया", "csv_path": "subjects/Social_Science/History/Ch-7.csv"},
+        {"नाम": "Ch-8 : उपन्यास, समाज और इतिहास (Novels, Society and History)", "chapter_name": "उपन्यास, समाज और इतिहास", "csv_path": "subjects/Social_Science/History/Ch-8.csv"}
+      ]
+    },
+    {
+      "नाम": "Social Science - Geography",
+      "अध्याय": [
+        {"नाम": "Ch-1 : संसाधन और विकास (Resources and Development)", "chapter_name": "संसाधन और विकास", "csv_path": "subjects/Social_Science/Geography/Ch-1.csv"},
+        {"नाम": "Ch-2 : वन एवं वन्य जीव संसाधन (Forest and Wildlife Resources)", "chapter_name": "वन एवं वन्य जीव संसाधन", "csv_path": "subjects/Social_Science/Geography/Ch-2.csv"},
+        {"नाम": "Ch-3 : जल संसाधन (Water Resources)", "chapter_name": "जल संसाधन", "csv_path": "subjects/Social_Science/Geography/Ch-3.csv"},
+        {"नाम": "Ch-4 : कृषि (Agriculture)", "chapter_name": "कृषि", "csv_path": "subjects/Social_Science/Geography/Ch-4.csv"},
+        {"नाम": "Ch-5 : खनिज तथा ऊर्जा संसाधन (Minerals and Energy Resources)", "chapter_name": "खनिज तथा ऊर्जा संसाधन", "csv_path": "subjects/Social_Science/Geography/Ch-5.csv"},
+        {"नाम": "Ch-6 : विनिर्माण उद्योग (Manufacturing Industries)", "chapter_name": "विनिर्माण उद्योग", "csv_path": "subjects/Social_Science/Geography/Ch-6.csv"},
+        {"नाम": "Ch-7 : राष्ट्रीय अर्थव्यवस्था की जीवन रेखाएँ (Lifelines of National Economy)", "chapter_name": "राष्ट्रीय अर्थव्यवस्था की जीवन रेखाएँ", "csv_path": "subjects/Social_Science/Geography/Ch-7.csv"}
+      ]
+    },
+    {
+      "नाम": "Social Science - Political Science",
+      "अध्याय": [
+        {"नाम": "Ch-1 : सत्ता की साझेदारी (Power-Sharing)", "chapter_name": "सत्ता की साझेदारी", "csv_path": "subjects/Social_Science/Political_Science/Ch-1.csv"},
+        {"नाम": "Ch-2 : संघवाद (Federalism)", "chapter_name": "संघवाद", "csv_path": "subjects/Social_Science/Political_Science/Ch-2.csv"},
+        {"नाम": "Ch-3 : लोकतंत्र और विविधता (Democracy and Diversity)", "chapter_name": "लोकतंत्र और विविधता", "csv_path": "subjects/Social_Science/Political_Science/Ch-3.csv"},
+        {"नाम": "Ch-4 : जाति, धर्म और लैंगिक मसले (Gender, Religion and Caste)", "chapter_name": "जाति, धर्म और लैंगिक मसले", "csv_path": "subjects/Social_Science/Political_Science/Ch-4.csv"},
+        {"नाम": "Ch-5 : जन-संघर्ष और आंदोलन (Popular Struggles and Movements)", "chapter_name": "जन-संघर्ष और आंदोलन", "csv_path": "subjects/Social_Science/Political_Science/Ch-5.csv"},
+        {"नाम": "Ch-6 : राजनीतिक दल (Political Parties)", "chapter_name": "राजनीतिक दल", "csv_path": "subjects/Social_Science/Political_Science/Ch-6.csv"},
+        {"नाम": "Ch-7 : लोकतंत्र के परिणाम (Outcomes of Democracy)", "chapter_name": "लोकतंत्र के परिणाम", "csv_path": "subjects/Social_Science/Political_Science/Ch-7.csv"},
+        {"नाम": "Ch-8 : लोकतंत्र की चुनौतियाँ (Challenges to Democracy)", "chapter_name": "लोकतंत्र की चुनौतियाँ", "csv_path": "subjects/Social_Science/Political_Science/Ch-8.csv"}
+      ]
+    },
+    {
+      "नाम": "Social Science - Economics",
+      "अध्याय": [
+        {"नाम": "Ch-1 : विकास (Development)", "chapter_name": "विकास", "csv_path": "subjects/Social_Science/Economics/Ch-1.csv"},
+        {"नाम": "Ch-2 : भारतीय अर्थव्यवस्था के क्षेत्रक (Sectors of the Indian Economy)", "chapter_name": "भारतीय अर्थव्यवस्था के क्षेत्रक", "csv_path": "subjects/Social_Science/Economics/Ch-2.csv"},
+        {"नाम": "Ch-3 : मुद्रा और साख (Money and Credit)", "chapter_name": "मुद्रा और साख", "csv_path": "subjects/Social_Science/Economics/Ch-3.csv"},
+        {"नाम": "Ch-4 : वैश्वीकरण और भारतीय अर्थव्यवस्था (Globalisation and the Indian Economy)", "chapter_name": "वैश्वीकरण और भारतीय अर्थव्यवस्था", "csv_path": "subjects/Social_Science/Economics/Ch-4.csv"},
+        {"नाम": "Ch-5 : उपभोक्ता अधिकार (Consumer Rights)", "chapter_name": "उपभोक्ता अधिकार", "csv_path": "subjects/Social_Science/Economics/Ch-5.csv"}
+      ]
+    },
+    {
+      "नाम": "Social Science - Disaster Management",
+      "अध्याय": [
+        {"नाम": "Ch-1 : आपदा प्रबंधन (Disaster Management)", "chapter_name": "आपदा प्रबंधन", "csv_path": "subjects/Social_Science/Disaster_Management/Ch-1.csv"}
+      ]
+    },
+    {
+      "नाम": "Science - Chemistry",
+      "अध्याय": [
+        {"नाम": "Ch-1 : रासायनिक अभिक्रियाएँ एवं समीकरण (Chemical Reactions and Equations)", "chapter_name": "रासायनिक अभिक्रियाएँ एवं समीकरण", "csv_path": "subjects/Science/Chemistry/Ch-1.csv"},
+        {"नाम": "Ch-2 : अम्ल, क्षारक एवं लवण (Acids, Bases and Salts)", "chapter_name": "अम्ल, क्षारक एवं लवण", "csv_path": "subjects/Science/Chemistry/Ch-2.csv"},
+        {"नाम": "Ch-3 : धातु एवं अधातु (Metals and Non-Metals)", "chapter_name": "धातु एवं अधातु", "csv_path": "subjects/Science/Chemistry/Ch-3.csv"},
+        {"नाम": "Ch-4 : कार्बन एवं उसके यौगिक (Carbon and its Compounds)", "chapter_name": "कार्बन एवं उसके यौगिक", "csv_path": "subjects/Science/Chemistry/Ch-4.csv"},
+        {"नाम": "Ch-5 : तत्वों का आवर्त वर्गीकरण (Periodic Classification of Elements)", "chapter_name": "तत्वों का आवर्त वर्गीकरण", "csv_path": "subjects/Science/Chemistry/Ch-5.csv"}
+      ]
+    },
+    {
+      "नाम": "Science - Biology",
+      "अध्याय": [
+        {"नाम": "Ch-1 : जैव प्रक्रम (Life Processes)", "chapter_name": "जैव प्रक्रम", "csv_path": "subjects/Science/Biology/Ch-1.csv"},
+        {"नाम": "Ch-2 : नियंत्रण एवं समन्वय (Control and Coordination)", "chapter_name": "नियंत्रण एवं समन्वय", "csv_path": "subjects/Science/Biology/Ch-2.csv"},
+        {"नाम": "Ch-3 : जीव जनन कैसे करते हैं? (How do Organisms Reproduce?)", "chapter_name": "जीव जनन कैसे करते हैं?", "csv_path": "subjects/Science/Biology/Ch-3.csv"},
+        {"नाम": "Ch-4 : आनुवंशिकता एवं जैव विकास (Heredity and Evolution)", "chapter_name": "आनुवंशिकता एवं जैव विकास", "csv_path": "subjects/Science/Biology/Ch-4.csv"},
+        {"नाम": "Ch-5 : ऊर्जा के स्रोत (Sources of Energy)", "chapter_name": "ऊर्जा के स्रोत", "csv_path": "subjects/Science/Biology/Ch-5.csv"},
+        {"नाम": "Ch-6 : हमारा पर्यावरण (Our Environment)", "chapter_name": "हमारा पर्यावरण", "csv_path": "subjects/Science/Biology/Ch-6.csv"},
+        {"नाम": "Ch-7 : प्राकृतिक संसाधनों का संपोषित प्रबंधन (Sustainable Management of Natural Resources)", "chapter_name": "प्राकृतिक संसाधनों का संपोषित प्रबंधन", "csv_path": "subjects/Science/Biology/Ch-7.csv"}
+      ]
+    },
+    {
+      "नाम": "Science - Physics",
+      "अध्याय": [
+        {"नाम": "Ch-1 : प्रकाश - परावर्तन तथा अपवर्तन (Light - Reflection and Refraction)", "chapter_name": "प्रकाश - परावर्तन तथा अपवर्तन", "csv_path": "subjects/Science/Physics/Ch-1.csv"},
+        {"नाम": "Ch-2 : मानव नेत्र तथा रंगबिरंगा संसार (The Human Eye and The Colorful World)", "chapter_name": "मानव नेत्र तथा रंगबिरंगा संसार", "csv_path": "subjects/Science/Physics/Ch-2.csv"},
+        {"नाम": "Ch-3 : विद्युत (Electricity)", "chapter_name": "विद्युत", "csv_path": "subjects/Science/Physics/Ch-3.csv"},
+        {"नाम": "Ch-4 : विद्युत धारा के चुंबकीय प्रभाव (Magnetic Effects of Electric Current)", "chapter_name": "विद्युत धारा के चुंबकीय प्रभाव", "csv_path": "subjects/Science/Physics/Ch-4.csv"}
+      ]
+    },
+    {
+      "नाम": "Urdu",
+      "अध्याय": [
+        {"नाम": "Ch-1 : حمد خداۓ عزوجل", "chapter_name": "حمد خداۓ عزوجل", "csv_path": "subjects/Urdu/Ch-1.csv"},
+        {"नाम": "Ch-2 : بھابھی جان", "chapter_name": "بھابھی جان", "csv_path": "subjects/Urdu/Ch-2.csv"},
+        {"नाम": "Ch-3 : فرار", "chapter_name": "فرار", "csv_path": "subjects/Urdu/Ch-3.csv"},
+        {"नाम": "Ch-4 : کٹی ہوئی شاخ", "chapter_name": "کٹی ہوئی شاخ", "csv_path": "subjects/Urdu/Ch-4.csv"},
+        {"नाम": "Ch-5 : آشیانہ", "chapter_name": "آشیانہ", "csv_path": "subjects/Urdu/Ch-5.csv"},
+        {"नाम": "Ch-6 : عالمی حدّت (Global Warming)", "chapter_name": "عالمی حدّت (Global Warming)", "csv_path": "subjects/Urdu/Ch-6.csv"},
+        {"नाम": "Ch-7 : ریا", "chapter_name": "ریا", "csv_path": "subjects/Urdu/Ch-7.csv"},
+        {"नाम": "Ch-8 : ادب کی پہچان", "chapter_name": "ادب کی پہچان", "csv_path": "subjects/Urdu/Ch-8.csv"},
+        {"नाम": "Ch-9 : ہندوستانی آئین کے معمار: ڈاکٹر بھیم راؤ امبیڈکر", "chapter_name": "ہندوستانی آئین کے معمار: ڈاکٹر بھیم راؤ امبیڈکر", "csv_path": "subjects/Urdu/Ch-9.csv"},
+        {"नाम": "Ch-10 : اردو ڈراما نگاری اور آغا حشر", "chapter_name": "اردو ڈراما نگاری اور آغا حشر", "csv_path": "subjects/Urdu/Ch-10.csv"},
+        {"नाम": "Ch-11 : آریہ بھٹ اور تریگنا", "chapter_name": "آریہ بھٹ اور تریگنا", "csv_path": "subjects/Urdu/Ch-11.csv"},
+        {"नाम": "Ch-12 : فہمیدہ اور منجھلی بیٹی حمیدہ کی گفتگو", "chapter_name": "فہمیدہ اور منجھلی بیٹی حمیدہ کی گفتگو", "csv_path": "subjects/Urdu/Ch-12.csv"},
+        {"नाम": "Ch-13 : غالب (مرزا غالب کے احوال و آثار)", "chapter_name": "غالب (مرزا غالب کے احوال و آثار)", "csv_path": "subjects/Urdu/Ch-13.csv"},
+        {"नाम": "Ch-14 : سید شاہ کرامت حسین ہمدانی کے نام (مکتوب نگاری)", "chapter_name": "سید شاہ کرامت حسین ہمدانی کے نام (مکتوب نگاری)", "csv_path": "subjects/Urdu/Ch-14.csv"},
+        {"नाम": "Ch-15 : انٹرویو (بیدی سے انٹرویو)", "chapter_name": "انٹرویو (بیدی سے انٹرویو)", "csv_path": "subjects/Urdu/Ch-15.csv"},
+        {"नाम": "Ch-16 : نظم: مناظرِ فطرت", "chapter_name": "نظم: مناظرِ فطرت", "csv_path": "subjects/Urdu/Ch-16.csv"},
+        {"नाम": "Ch-17 : نظم: انڈیا گیٹ", "chapter_name": "نظم: انڈیا گیٹ", "csv_path": "subjects/Urdu/Ch-17.csv"},
+        {"नाम": "Ch-18 : نظم: ہم نوجوان ہیں", "chapter_name": "نظم: ہم نوجوان ہیں", "csv_path": "subjects/Urdu/Ch-18.csv"},
+        {"नाम": "Ch-19 : نظم: بجلی کا کھمبا اور نظام آسان تھی پہلے", "chapter_name": "نظم: بجلی کا کھمبا اور نظام آسان تھی پہلے", "csv_path": "subjects/Urdu/Ch-19.csv"},
+        {"नाम": "Ch-20 : نظم: کھڑا ڈنر", "chapter_name": "نظم: کھڑا ڈنر", "csv_path": "subjects/Urdu/Ch-20.csv"},
+        {"नाम": "Ch-21 : غزل (شوق نیموی)", "chapter_name": "غزل (شوق نیموی)", "csv_path": "subjects/Urdu/Ch-21.csv"},
+        {"नाम": "Ch-22 : غزل (ارشد القادری)", "chapter_name": "غزل (ارشد القادری)", "csv_path": "subjects/Urdu/Ch-22.csv"},
+        {"नाम": "Ch-23 : مثنوی: زہر عشق", "chapter_name": "مثنوی: زہر عشق", "csv_path": "subjects/Urdu/Ch-23.csv"},
+        {"नाम": "Ch-24 : مثنوی: گلزارِ نسیم", "chapter_name": "مثنوی: گلزارِ نسیم", "csv_path": "subjects/Urdu/Ch-24.csv"},
+        {"नाम": "Ch-25 : مثنوی: جذبۂ عشق", "chapter_name": "مثنوی: جذبۂ عشق", "csv_path": "subjects/Urdu/Ch-25.csv"},
+        {"नाम": "Ch-26 : غزل (مبارک عظیم آبادی)", "chapter_name": "غزل (مبارک عظیم آبادی)", "csv_path": "subjects/Urdu/Ch-26.csv"},
+        {"नाम": "Ch-27 : غزل (احمد فراز)", "chapter_name": "غزل (احمد فراز)", "csv_path": "subjects/Urdu/Ch-27.csv"},
+        {"नाम": "Ch-28 : غزل (حسن نعیم)", "chapter_name": "غزل (حسن نعیم)", "csv_path": "subjects/Urdu/Ch-28.csv"},
+        {"नाम": "Ch-29 : غزل (پروین شاکر)", "chapter_name": "غزل (پروین شاکر)", "csv_path": "subjects/Urdu/Ch-29.csv"},
+        {"नाम": "Ch-30 : غزل (عرفان صدیقی)", "chapter_name": "غزل (عرفان صدیقی)", "csv_path": "subjects/Urdu/Ch-30.csv"},
+        {"नाम": "Ch-31 : دوہا (ظفر گورکھپوری)", "chapter_name": "دوہا (ظفر گورکھپوری)", "csv_path": "subjects/Urdu/Ch-31.csv"},
+        {"नाम": "Ch-32 : گیت: جمنا کی لہریں اٹھتی ہیں", "chapter_name": "گیت: جمنا کی لہریں اٹھتی ہیں", "csv_path": "subjects/Urdu/Ch-32.csv"}
+      ]
+    }
+  ]
+}
