@@ -1,7 +1,7 @@
 class MCQTestApp {
     constructor() {
-        this.storagePrefix = '10th_mcq_app_'; // seprate storage ke liye he ye.
-        // --- Properties ---
+        // --- Core Properties ---
+        this.storagePrefix = '10th_mcq_app_';
         this.questions = [];
         this.currentTest = null;
         this.currentQuestionIndex = 0;
@@ -20,12 +20,10 @@ class MCQTestApp {
         this.deferredInstallPrompt = null;
 
         this.isAnalyticsPage = document.getElementById('analytics-screen-body') !== null;
-        
+
         if (this.isAnalyticsPage) {
-            // If on analytics.html, only initialize analytics logic
             this.initializeAnalytics();
         } else {
-            // Full initialization for index.html
             this.initializeElements();
             this.bindEvents();
             this.loadInitialData();
@@ -34,16 +32,25 @@ class MCQTestApp {
         }
     }
 
+    // --- Storage Helpers (Using Prefix) ---
+    getStorageItem(key) {
+        return localStorage.getItem(this.storagePrefix + key);
+    }
+    setStorageItem(key, value) {
+        localStorage.setItem(this.storagePrefix + key, value);
+    }
+    removeStorageItem(key) {
+        localStorage.removeItem(this.storagePrefix + key);
+    }
+
+    // --- Initialization & Events ---
     initializeElements() {
-        // --- Screen elements ---
         this.screens = {
             home: document.getElementById('home-screen'),
             test: document.getElementById('test-screen'),
             results: document.getElementById('results-screen'),
             history: document.getElementById('history-screen')
         };
-        
-        // --- Home screen elements ---
         this.welcomeMessage = document.getElementById('welcome-message');
         this.nameInputSection = document.getElementById('name-input-section');
         this.userNameInput = document.getElementById('user-name-input');
@@ -61,8 +68,6 @@ class MCQTestApp {
         this.viewHistoryBtn = document.getElementById('view-history');
         this.viewAnalyticsBtn = document.getElementById('view-analytics');
         this.installAppBtn = document.getElementById('install-app-btn');
-
-        // --- Test screen elements ---
         this.timeLeftElement = document.getElementById('time-left');
         this.currentQuestion = document.getElementById('current-question');
         this.totalQuestions = document.getElementById('total-questions');
@@ -71,8 +76,6 @@ class MCQTestApp {
         this.prevBtn = document.getElementById('prev-btn');
         this.nextBtn = document.getElementById('next-btn');
         this.submitTestBtn = document.getElementById('submit-test');
-
-        // --- Results screen elements ---
         this.scoreElement = document.getElementById('score');
         this.totalScoreElement = document.getElementById('total-score');
         this.percentageElement = document.getElementById('percentage');
@@ -83,8 +86,6 @@ class MCQTestApp {
         this.questionsReview = document.getElementById('questions-review');
         this.newTestBtn = document.getElementById('new-test');
         this.exportResultsBtn = document.getElementById('export-results');
-
-        // --- History screen elements ---
         this.historyList = document.getElementById('history-list');
         this.backToHomeBtn = document.getElementById('back-to-home');
         this.clearHistoryBtn = document.getElementById('clear-history');
@@ -95,16 +96,13 @@ class MCQTestApp {
         this.userNameInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') this.setUserName();
         });
-
         this.subjectSelect.addEventListener('change', () => this.handleSubjectChange());
         this.chapterSelect.addEventListener('change', () => this.handleChapterChange());
-
         this.startTestBtn.addEventListener('click', () => this.startTest());
         this.prevBtn.addEventListener('click', () => this.previousQuestion());
         this.nextBtn.addEventListener('click', () => this.nextQuestion());
         this.submitTestBtn.addEventListener('click', () => this.submitTest());
         this.newTestBtn.addEventListener('click', () => this.resetApp());
-        
         this.viewHistoryBtn.addEventListener('click', () => this.showHistoryScreen());
         this.viewAnalyticsBtn.addEventListener('click', () => this.navigateToAnalytics());
         this.backToHomeBtn.addEventListener('click', () => this.showHomeScreen());
@@ -112,13 +110,18 @@ class MCQTestApp {
         this.exportResultsBtn.addEventListener('click', () => this.exportResults());
         this.installAppBtn.addEventListener('click', () => this.promptInstall());
     }
-    
+
     // --- PWA Installation Logic ---
     setupInstallPrompt() {
+        const installBtn = document.getElementById('install-app-btn');
+        if (!installBtn) return;
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             this.deferredInstallPrompt = e;
-            this.installAppBtn.classList.remove('hidden');
+            installBtn.classList.remove('hidden');
+        });
+        window.addEventListener('appinstalled', () => {
+            installBtn.classList.add('hidden');
         });
     }
 
@@ -130,17 +133,17 @@ class MCQTestApp {
                     console.log('User accepted the install prompt');
                 }
                 this.deferredInstallPrompt = null;
-                this.installAppBtn.classList.add('hidden');
+                document.getElementById('install-app-btn').classList.add('hidden');
             });
         }
     }
-    
+
     // --- User & Initial Data ---
     setUserName() {
         const name = this.userNameInput.value.trim();
         if (name) {
             this.userName = name;
-            localStorage.setItem(this.storagePrefix + 'user_name', name);
+            this.setStorageItem('user_name', name);
             this.updateWelcomeMessage();
             this.nameInputSection.classList.add('hidden');
             this.testMainSection.classList.remove('hidden');
@@ -158,14 +161,14 @@ class MCQTestApp {
     }
 
     async loadInitialData() {
-        this.userName = localStorage.getItem(this.storagePrefix + 'user_name') || '';
+        this.userName = this.getStorageItem('user_name') || '';
         this.updateWelcomeMessage();
 
         if (this.userName) {
             this.nameInputSection.classList.add('hidden');
             this.testMainSection.classList.remove('hidden');
         }
-        
+
         try {
             const response = await fetch('subjects.json');
             if (!response.ok) throw new Error('subjects.json not found.');
@@ -177,8 +180,8 @@ class MCQTestApp {
             alert('Error loading subjects: ' + error.message);
         }
     }
-    
-    // --- Subject/Chapter Handling ---
+
+    // --- Subject/Chapter Handling & Urdu Mode ---
     populateSubjects() {
         this.subjectSelect.innerHTML = '<option value="">-- Select Subject --</option>';
         this.subjectsData.forEach(subject => {
@@ -191,17 +194,10 @@ class MCQTestApp {
 
     handleSubjectChange() {
         const selectedSubjectName = this.subjectSelect.value;
-
-        // Toggle Urdu mode based on selection
-        if (selectedSubjectName === 'Urdu') {
-            document.body.classList.add('urdu-mode');
-        } else {
-            document.body.classList.remove('urdu-mode');
-        }
-        
+        document.body.classList.toggle('urdu-mode', selectedSubjectName === 'Urdu');
         this.populateChapters();
     }
-    
+
     populateChapters() {
         const selectedSubjectName = this.subjectSelect.value;
         this.chapterSelect.innerHTML = '<option value="">-- Select Chapter --</option>';
@@ -209,7 +205,7 @@ class MCQTestApp {
         this.testSetup.classList.add('hidden');
         this.questionCount.textContent = '0';
         this.questions = [];
-        
+
         if (selectedSubjectName) {
             const subject = this.subjectsData.find(s => s.नाम === selectedSubjectName);
             if (subject) {
@@ -234,14 +230,15 @@ class MCQTestApp {
         }
 
         try {
-            const response = await fetch(csvPath);
+            // Add a cache-busting parameter to ensure the latest file is fetched
+            const response = await fetch(`${csvPath}?v=${new Date().getTime()}`);
             if (!response.ok) throw new Error(`CSV file (${csvPath}) could not be loaded.`);
             const csvText = await response.text();
             this.parseCSV(csvText);
-            
+
             this.subjectName = this.subjectSelect.value;
             this.chapterName = this.chapterSelect.options[this.chapterSelect.selectedIndex].text;
-            
+
             this.updateQuestionCount();
             this.testSetup.classList.remove('hidden');
         } catch (error) {
@@ -250,12 +247,18 @@ class MCQTestApp {
         }
     }
 
+    // --- FINAL, ROBUST PARSING FUNCTION ---
     parseCSV(csvText) {
-        // BUG FIX: Loop starts from 0 to include the first question.
-        // README confirms no header row.
-        const lines = csvText.trim().split('\n').filter(line => line.trim() !== '');
+        // Use a regular expression to split by new lines (\n) or carriage return + new lines (\r\n)
+        const lines = csvText.trim().split(/\r?\n/);
+
         this.questions = lines.map((line, index) => {
+            // Skip empty lines
+            if (line.trim() === '') return null;
+            
             const values = line.split('|').map(v => v.trim());
+            
+            // Ensure the line has the minimum number of columns
             if (values.length < 7) return null;
 
             return {
@@ -266,10 +269,10 @@ class MCQTestApp {
                 tags: values[7] || '',
                 timeLimit: parseInt(values[8]) || 30
             };
-        }).filter(q => q && q.question && q.options.length >= 2 && q.answer);
-        
+        }).filter(q => q && q.question && q.options.length >= 2 && q.answer); // Filter out any null entries
+
         if (this.questions.length === 0) {
-            throw new Error('No valid questions found in the CSV file.');
+            throw new Error('No valid questions found in the CSV file. Please check the file format.');
         }
     }
 
@@ -279,7 +282,7 @@ class MCQTestApp {
         this.numQuestions.max = count;
         this.numQuestions.value = Math.min(count, 10);
     }
-    
+
     // --- Test Logic ---
     startTest() {
         if (this.questions.length === 0) {
@@ -320,13 +323,15 @@ class MCQTestApp {
 
     displayQuestion() {
         const question = this.currentTest[this.currentQuestionIndex];
-        this.questionText.textContent = question.question;
+
+        this.questionText.innerHTML = question.question;
         this.optionsContainer.innerHTML = '';
-        
-        question.options.forEach((option, index) => {
+
+        question.options.forEach((option) => {
             const optionElement = document.createElement('div');
             optionElement.className = 'option';
-            optionElement.textContent = option;
+            optionElement.innerHTML = option;
+
             if (this.userAnswers[this.currentQuestionIndex] === option) {
                 optionElement.classList.add('selected');
             }
@@ -335,11 +340,15 @@ class MCQTestApp {
         });
 
         this.updateNavigationButtons();
+
+        if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+            MathJax.typesetPromise([document.getElementById('question-container')]);
+        }
     }
 
     selectOption(optionText) {
         this.userAnswers[this.currentQuestionIndex] = optionText;
-        this.displayQuestion(); // Re-render to show selection
+        this.displayQuestion();
     }
 
     previousQuestion() {
@@ -357,7 +366,7 @@ class MCQTestApp {
             this.updateProgress();
         }
     }
-    
+
     submitTest() {
         if (this.timerInterval) clearInterval(this.timerInterval);
         this.endTime = new Date();
@@ -365,7 +374,7 @@ class MCQTestApp {
         this.saveTestResult();
         this.showResultsScreen();
     }
-    
+
     // --- Results & Celebration ---
     calculateResults() {
         let correct = 0;
@@ -395,7 +404,7 @@ class MCQTestApp {
     showResultsScreen() {
         this.showScreen('results');
         const result = this.currentResult;
-        
+
         this.scoreElement.textContent = result.score;
         this.totalScoreElement.textContent = result.total;
         this.percentageElement.textContent = result.percentage;
@@ -403,8 +412,7 @@ class MCQTestApp {
         this.resultSubject.textContent = result.subject;
         this.resultChapter.textContent = result.chapter;
 
-        // Dynamic coloring for percentage
-        this.percentageContainer.className = 'percentage'; // Reset classes
+        this.percentageContainer.className = 'percentage';
         if (result.percentage >= 80) {
             this.percentageContainer.classList.add('excellent');
             this.triggerConfetti();
@@ -413,10 +421,14 @@ class MCQTestApp {
         } else {
             this.percentageContainer.classList.add('poor');
         }
-        
+
         this.displayQuestionsReview();
+
+        if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+            MathJax.typesetPromise([document.getElementById('results-screen')]);
+        }
     }
-    
+
     triggerConfetti() {
         if (window.confetti) {
             confetti({
@@ -446,19 +458,23 @@ class MCQTestApp {
 
     // --- History Management ---
     saveTestResult() {
-        let history = JSON.parse(localStorage.getItem(this.storagePrefix + 'test_history') || '[]');
-        history.unshift(this.currentResult); // Add to the beginning
+        let history = JSON.parse(this.getStorageItem('test_history') || '[]');
+        history.unshift(this.currentResult);
         if (history.length > 50) history = history.slice(0, 50);
-        localStorage.setItem(this.storagePrefix + 'test_history', JSON.stringify(history));
+        this.setStorageItem('test_history', JSON.stringify(history));
     }
 
     showHistoryScreen() {
         this.showScreen('history');
         this.displayHistory();
+
+        if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+            MathJax.typesetPromise([document.getElementById('history-screen')]);
+        }
     }
 
     displayHistory() {
-        const history = JSON.parse(localStorage.getItem('test_history') || '[]');
+        const history = JSON.parse(this.getStorageItem('test_history') || '[]');
         this.historyList.innerHTML = '';
         if (history.length === 0) {
             this.historyList.innerHTML = '<p style="color:white; text-align:center;">No attempts recorded yet.</p>';
@@ -485,36 +501,37 @@ class MCQTestApp {
             `;
             this.historyList.appendChild(historyItem);
         });
-        
-        // Add event listeners after creation
-        this.historyList.querySelectorAll('.view-details-btn').forEach(btn => 
+
+        this.historyList.querySelectorAll('.view-details-btn').forEach(btn =>
             btn.addEventListener('click', (e) => this.viewTestDetails(e.target.dataset.index))
         );
-        this.historyList.querySelectorAll('.delete-test-btn').forEach(btn => 
+        this.historyList.querySelectorAll('.delete-test-btn').forEach(btn =>
             btn.addEventListener('click', (e) => this.deleteTest(e.target.dataset.index))
         );
     }
-    
+
     viewTestDetails(index) {
-        const history = JSON.parse(localStorage.getItem('test_history') || '[]');
+        const history = JSON.parse(this.getStorageItem('test_history') || '[]');
         if (history[index]) {
             this.currentResult = history[index];
+            this.subjectName = this.currentResult.subject;
+            this.handleSubjectChange(); // Apply Urdu mode if necessary
             this.showResultsScreen();
         }
     }
 
     deleteTest(index) {
         if (confirm('Are you sure you want to delete this test record?')) {
-            let history = JSON.parse(localStorage.getItem('test_history') || '[]');
+            let history = JSON.parse(this.getStorageItem('test_history') || '[]');
             history.splice(index, 1);
-            localStorage.setItem('test_history', JSON.stringify(history));
+            this.setStorageItem('test_history', JSON.stringify(history));
             this.displayHistory();
         }
     }
 
     clearHistory() {
         if (confirm('Are you sure you want to clear ALL test history? This cannot be undone.')) {
-            localStorage.removeItem(this.storagePrefix + 'test_history');
+            this.removeStorageItem('test_history');
             this.displayHistory();
         }
     }
@@ -524,8 +541,8 @@ class MCQTestApp {
         document.getElementById('back-from-analytics').addEventListener('click', () => {
             window.location.href = 'index.html';
         });
-        
-        const history = JSON.parse(localStorage.getItem(this.storagePrefix + 'test_history') || '[]');
+
+        const history = JSON.parse(this.getStorageItem('test_history') || '[]');
         if (history.length === 0) {
             document.getElementById('analytics-data-content').classList.add('hidden');
             document.getElementById('no-history-message').classList.remove('hidden');
@@ -583,6 +600,10 @@ class MCQTestApp {
         history.slice(0, 5).forEach(result => {
              list.innerHTML += `<div class="history-item"><h4>${result.subject} - ${result.chapter}</h4><div class="history-stats"><span>Score: <strong>${result.score}/${result.total}</strong></span><span><strong>${result.percentage}%</strong></span></div><div class="history-date">${new Date(result.date).toLocaleDateString()}</div></div>`;
         });
+        
+        if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+            MathJax.typesetPromise([document.getElementById('analytics-screen-body')]);
+        }
     }
 
     // --- Navigation & Helpers ---
@@ -633,5 +654,4 @@ class MCQTestApp {
 // --- Initialize App ---
 document.addEventListener('DOMContentLoaded', () => {
     new MCQTestApp();
-
 });
