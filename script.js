@@ -230,7 +230,6 @@ class MCQTestApp {
         }
 
         try {
-            // Add a cache-busting parameter to ensure the latest file is fetched
             const response = await fetch(`${csvPath}?v=${new Date().getTime()}`);
             if (!response.ok) throw new Error(`CSV file (${csvPath}) could not be loaded.`);
             const csvText = await response.text();
@@ -249,16 +248,13 @@ class MCQTestApp {
 
     // --- FINAL, ROBUST PARSING FUNCTION ---
     parseCSV(csvText) {
-        // Use a regular expression to split by new lines (\n) or carriage return + new lines (\r\n)
         const lines = csvText.trim().split(/\r?\n/);
 
         this.questions = lines.map((line, index) => {
-            // Skip empty lines
             if (line.trim() === '') return null;
-            
+
             const values = line.split('|').map(v => v.trim());
-            
-            // Ensure the line has the minimum number of columns
+
             if (values.length < 7) return null;
 
             return {
@@ -269,7 +265,7 @@ class MCQTestApp {
                 tags: values[7] || '',
                 timeLimit: parseInt(values[8]) || 30
             };
-        }).filter(q => q && q.question && q.options.length >= 2 && q.answer); // Filter out any null entries
+        }).filter(q => q && q.question && q.options.length >= 2 && q.answer);
 
         if (this.questions.length === 0) {
             throw new Error('No valid questions found in the CSV file. Please check the file format.');
@@ -515,7 +511,7 @@ class MCQTestApp {
         if (history[index]) {
             this.currentResult = history[index];
             this.subjectName = this.currentResult.subject;
-            this.handleSubjectChange(); // Apply Urdu mode if necessary
+            this.handleSubjectChange(); 
             this.showResultsScreen();
         }
     }
@@ -600,7 +596,7 @@ class MCQTestApp {
         history.slice(0, 5).forEach(result => {
              list.innerHTML += `<div class="history-item"><h4>${result.subject} - ${result.chapter}</h4><div class="history-stats"><span>Score: <strong>${result.score}/${result.total}</strong></span><span><strong>${result.percentage}%</strong></span></div><div class="history-date">${new Date(result.date).toLocaleDateString()}</div></div>`;
         });
-        
+
         if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
             MathJax.typesetPromise([document.getElementById('analytics-screen-body')]);
         }
